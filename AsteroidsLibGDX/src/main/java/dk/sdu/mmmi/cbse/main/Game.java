@@ -12,7 +12,7 @@ public class Game implements ApplicationListener {
 	
 	public static int WIDTH;
 	public static int HEIGHT;
-	
+		
 	public static OrthographicCamera cam;
 	
 	private GameStateManager gsm;

@@ -3,12 +3,25 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>dk.sdu.mmmi.cbse</groupId>
-        <artifactId>AsteroidsEntityFramework</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <artifactId>asteroids.Framework</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>Player</artifactId>
+    <artifactId>player</artifactId>
     <packaging>jar</packaging>
-
+    <name>Player</name>
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>dk.sdu.mmmi.cbse</groupId>
+            <artifactId>commonBullet</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
@@ -18,11 +31,4 @@
             </plugin>
         </plugins>
     </build>
-    <dependencies>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>Common</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-    </dependencies>
 </project>

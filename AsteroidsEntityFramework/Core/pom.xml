@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>dk.sdu.mmmi.cbse</groupId>
-        <artifactId>AsteroidsEntityFramework</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+    <groupId>dk.sdu.cbse.ateroids</groupId>
     <artifactId>Core</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    
+
+    <name>Core</name>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <libGDX.version>1.9.10</libGDX.version>
     </properties>
-    
+
     <repositories>
         <repository>
             <id>gdx-nightlies</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </repository>
     </repositories>
-    
+
     <dependencies>
         <dependency>
             <groupId>com.badlogicgames.gdx</groupId>
@@ -52,7 +51,7 @@
             <classifier>natives-desktop</classifier>
             <version>${libGDX.version}</version>
             <scope>compile</scope>
-        </dependency>                
+        </dependency>
         <dependency>
             <groupId>com.badlogicgames.gdx</groupId>
             <artifactId>gdx-freetype</artifactId>
@@ -60,19 +59,39 @@
         </dependency>
         <dependency>
             <groupId>com.badlogicgames.gdx</groupId>
-            <artifactId>gdx-freetype-platform</artifactId>    
+            <artifactId>gdx-freetype-platform</artifactId>
             <classifier>natives-desktop</classifier>
             <version>${libGDX.version}</version>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>Common</artifactId>
-            <version>${project.version}</version>
+            <groupId>dk.sdu.mmmi.cbse</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>Player</artifactId>
-            <version>${project.version}</version>
+            <groupId>dk.sdu.mmmi.cbse</groupId>
+            <artifactId>commonBullet</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>dk.sdu.mmmi.cbse</groupId>
+            <artifactId>player</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>dk.sdu.mmmi.cbse</groupId>
+            <artifactId>enemy</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>dk.sdu.mmmi.cbse</groupId>
+            <artifactId>asteroid</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>dk.sdu.mmmi.cbse</groupId>
+            <artifactId>bullet</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <build>
@@ -84,5 +103,5 @@
             </plugin>
         </plugins>
     </build>
-    
+
 </project>
