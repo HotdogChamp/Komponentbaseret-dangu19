@@ -1,5 +1,6 @@
 package dk.sdu.mmmi.cbse.entities;
 
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.MathUtils;
@@ -105,11 +106,14 @@ public class Player extends SpaceObject {
         setShape();
 
         // screen wrap
+/*
         wrap();
+*/
 
     }
 
-    public void draw(ShapeRenderer sr) {
+    public void draw(ShapeRenderer sr, OrthographicCamera camera) {
+        sr.setProjectionMatrix(camera.combined);
 
         sr.setColor(1, 1, 1, 1);
 

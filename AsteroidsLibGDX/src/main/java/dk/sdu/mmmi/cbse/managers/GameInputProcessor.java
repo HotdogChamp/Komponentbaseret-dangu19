@@ -1,5 +1,6 @@
 package dk.sdu.mmmi.cbse.managers;
 
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Input.Keys;
 
@@ -30,6 +31,10 @@ public class GameInputProcessor extends InputAdapter {
 		if(k == Keys.SHIFT_LEFT || k == Keys.SHIFT_RIGHT) {
 			GameKeys.setKey(GameKeys.SHIFT, true);
 		}
+		if(k == Input.Buttons.LEFT)
+		{
+			GameKeys.setKey(GameKeys.CLICK, true);
+		}
 		return true;
 	}
 	
@@ -58,6 +63,10 @@ public class GameInputProcessor extends InputAdapter {
 		if(k == Keys.SHIFT_LEFT || k == Keys.SHIFT_RIGHT) {
 			GameKeys.setKey(GameKeys.SHIFT, false);
 		}
+		if(k == Input.Buttons.LEFT) {
+			GameKeys.setKey(GameKeys.CLICK, false);
+		}
+
 		return true;
 	}
 	

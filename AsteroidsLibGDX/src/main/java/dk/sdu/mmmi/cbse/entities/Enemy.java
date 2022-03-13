@@ -76,7 +76,9 @@ public class Enemy extends SpaceObject{
         setShape();
 
         //Set screen wrap
+/*
         wrap();
+*/
     }
 
     public void draw(ShapeRenderer sr)

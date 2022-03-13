@@ -1,5 +1,8 @@
 package dk.sdu.mmmi.cbse.gamestates;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.MathUtils;
 import dk.sdu.mmmi.cbse.entities.Asteroid;
@@ -10,10 +13,13 @@ import dk.sdu.mmmi.cbse.main.Game;
 import dk.sdu.mmmi.cbse.managers.GameKeys;
 import dk.sdu.mmmi.cbse.managers.GameStateManager;
 
+
 import java.util.ArrayList;
 
 public class PlayState extends GameState {
-	
+	public static OrthographicCamera cam;
+
+
 	private ShapeRenderer sr;
 	
 	private Player player;
@@ -84,10 +90,16 @@ public class PlayState extends GameState {
 
 	
 	public void update(float dt) {
-		
 		handleInput();
 
+
+		cam = Game.cam;
+		cam.position.x = player.getX();
+		cam.position.y = player.getY();
+		cam.update();
+
 		player.update(dt);
+
 
 		enemy.update(dt);
 		enemy.shoot();
@@ -125,7 +137,7 @@ public class PlayState extends GameState {
 	}
 	
 	public void draw() {
-		player.draw(sr);
+		player.draw(sr, cam);
 		enemy.draw(sr);
 
 		for(int i = 0 ; i < playerBullets.size() ; i++)
@@ -148,11 +160,16 @@ public class PlayState extends GameState {
 		player.setLeft(GameKeys.isDown(GameKeys.LEFT));
 		player.setRight(GameKeys.isDown(GameKeys.RIGHT));
 		player.setUp(GameKeys.isDown(GameKeys.UP));
-		if(GameKeys.isPressed(GameKeys.SPACE))
+		if(Gdx.input.justTouched())
 		{
 			player.shoot();
 			System.out.println("Pressed");
 		}
+/*		if(GameKeys.isPressed(GameKeys.CLICK))
+		{
+			player.shoot();
+			System.out.println("Pressed");
+		}*/
 	}
 
 	public void dispose() {}

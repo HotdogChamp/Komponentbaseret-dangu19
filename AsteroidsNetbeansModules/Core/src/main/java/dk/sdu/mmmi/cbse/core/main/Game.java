@@ -143,6 +143,5 @@ public class Game implements ApplicationListener {
                 }
             }
         }
-
     };
 }

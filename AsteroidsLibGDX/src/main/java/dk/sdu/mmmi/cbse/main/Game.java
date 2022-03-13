@@ -2,6 +2,8 @@ package dk.sdu.mmmi.cbse.main;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import dk.sdu.mmmi.cbse.managers.GameInputProcessor;
@@ -14,25 +16,25 @@ public class Game implements ApplicationListener {
 	public static int HEIGHT;
 		
 	public static OrthographicCamera cam;
-	
+
 	private GameStateManager gsm;
 	
         @Override
 	public void create() {
-		
 		WIDTH = Gdx.graphics.getWidth();
 		HEIGHT = Gdx.graphics.getHeight();
 		
-		cam = new OrthographicCamera(WIDTH, HEIGHT);
+		cam = new OrthographicCamera(1280, 720);
+/*
 		cam.translate(WIDTH / 2, HEIGHT / 2);
+*/
 		cam.update();
-		
+
 		Gdx.input.setInputProcessor(
 			new GameInputProcessor()
 		);
-		
+
 		gsm = new GameStateManager();
-		
 	}
 	
         @Override
@@ -46,7 +48,6 @@ public class Game implements ApplicationListener {
 		gsm.draw();
 		
 		GameKeys.update();
-		
 	}
 	
         @Override
