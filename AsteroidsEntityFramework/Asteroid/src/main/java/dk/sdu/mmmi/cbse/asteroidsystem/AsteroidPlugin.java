@@ -29,9 +29,11 @@ public class AsteroidPlugin implements IGamePluginService {
         float radians = MathUtils.random(2 * 3.1415f);
         float radius = 40 / 2;
 
-
-        Entity asteroid = new Asteroid(Asteroid.LARGE);
+        Entity asteroid = new Asteroid();
         asteroid.setRadius(radius);
+        
+        asteroid.setShapeX(new float[12]);
+        asteroid.setShapeY(new float[12]);
 
         float[] dists = new float[asteroid.getShapeX().length];
         for(int i = 0 ; i < asteroid.getShapeX().length ; i++)

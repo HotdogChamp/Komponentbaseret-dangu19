@@ -24,7 +24,6 @@ public class AsteroidControlSystem implements IEntityProcessingService {
 
             updateShape(asteroid);
         }
-
     }
 
     //Create a random by using a distance array asteroid

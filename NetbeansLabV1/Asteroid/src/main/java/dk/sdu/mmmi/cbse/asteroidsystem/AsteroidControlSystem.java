@@ -10,8 +10,6 @@ import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
 import org.openide.util.lookup.ServiceProvider;
 import org.openide.util.lookup.ServiceProviders;
 
-import static dk.sdu.mmmi.cbse.common.data.GameKeys.*;
-
 @ServiceProviders(value = {
         @ServiceProvider(service = IEntityProcessingService.class),})
 public class AsteroidControlSystem implements IEntityProcessingService {
